@@ -47,7 +47,7 @@ def get_standings():
             "display": FOLDER_TO_DISPLAY.get(folder, folder.title()),
             "wins": s.get("wins", 0),
             "losses": s.get("losses", 0),
-            "ties": s.get("ties", 0),
+            "ties": 0 if (s.get("wins",0)+s.get("losses",0)==0) else s.get("ties",0),
             "pf": s.get("fpts", 0) + s.get("fpts_decimal", 0) / 100,
             "pa": s.get("fpts_against", 0) + s.get("fpts_against_decimal", 0) / 100,
         })
@@ -57,7 +57,7 @@ def get_standings():
 def build_html(teams):
     rows = []
     for i, t in enumerate(teams, start=1):
-        wl = f"{t['wins']}-{t['losses']}" + (f"-{t['ties']}" if t["ties"] else "")
+        wl = f"{t['wins']}-{t['losses']}-{t['ties']}"
         rows.append(
             f'<tr><td>{i}</td>'
             f'<td><a href="teams/{t["folder"]}/index.html">{t["display"]}</a></td>'
