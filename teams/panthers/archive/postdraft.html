@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Panthers — Archive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg-dark:#050E14;--bg:#0A1822;--primary:#0085CA;--secondary:#BFC0BF;--text:#EEF6FA;--textdim:238,246,250;--line:rgba(238,246,250,0.16);}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg-dark);color:var(--text);font-family:'Inter',sans-serif;transition:background 0.3s,color 0.3s;}
+.wrap{max-width:640px;margin:0 auto;background:var(--bg);min-height:100vh;}
+.navstrip{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;font-size:12px;background:var(--bg-dark);border-bottom:1px solid var(--line);gap:6px;}
+.navstrip a, .navstrip button{color:var(--secondary);text-decoration:none;font-weight:600;background:none;border:none;font-size:12px;font-family:inherit;cursor:pointer;padding:4px 6px;}
+.navstrip a.disabled, .navstrip button.disabled{color:rgba(238,246,250,0.25);pointer-events:none;}
+.navgroup{display:flex;gap:10px;}
+.toggle-btn{border:1px solid var(--line) !important;border-radius:14px;padding:4px 10px !important;}
+.masthead{padding:28px 20px 20px;text-align:center;border-bottom:4px solid var(--primary);}
+.logo-img{height:72px;margin:0 auto 12px;display:block;}
+.kicker{font-size:12px;letter-spacing:0.14em;color:var(--secondary);margin-bottom:6px;font-weight:700;text-transform:uppercase;}
+h1{font-family:'Oswald',sans-serif;font-size:clamp(26px,7.5vw,36px);font-weight:700;margin:0 0 6px;}
+.edition{font-size:13px;color:rgba(238,246,250,0.7);}
+.hero{padding:20px;}
+.hero h2{font-family:'Oswald',sans-serif;font-size:clamp(18px,5.6vw,23px);margin:0 0 10px;color:var(--secondary);}
+.hero p{font-size:15px;line-height:1.55;margin:0;color:rgba(238,246,250,0.9);}
+section.block{padding:8px 20px 22px;}
+.section-title{font-family:'Oswald',sans-serif;font-size:19px;font-weight:600;margin:0 0 12px;color:var(--secondary);}
+.section-sub{font-size:12px;color:rgba(238,246,250,0.5);margin:-8px 0 12px;}
+.card{background:rgba(238,246,250,0.05);border-radius:10px;padding:16px;margin-bottom:10px;border-left:4px solid var(--primary);}
+.card h3{font-family:'Oswald',sans-serif;font-size:15.5px;margin:0 0 4px;}
+.card p{font-size:13.5px;line-height:1.5;margin:0;color:rgba(238,246,250,0.85);}
+.rank-row{display:flex;align-items:center;gap:12px;padding:10px 16px;border-radius:10px;border:1px solid var(--line);margin-bottom:6px;}
+.rank-row .num{font-family:'Oswald',sans-serif;font-weight:700;color:var(--primary);width:20px;}
+.rank-row img{height:26px;}
+.rank-row .info{flex:1;font-size:13.5px;}
+.rank-row .pts{font-size:12px;color:rgba(238,246,250,0.55);}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="navstrip"><div class="navgroup"><a href="../index.html">First</a><a class="disabled">« Prev</a></div><button class="toggle-btn" onclick="toggleColors()"><span id="toggleLabel">View: Away</span></button><div class="navgroup"><a class="disabled">Next »</a><a href="../index.html">Last</a></div></div>
+
+  <header class="masthead">
+    <img class="logo-img" src="../../logos/carolina-panthers-logo.png" alt="Panthers">
+    <div class="kicker">RIVALS REPORT B — POST-DRAFT TEAM EDITION</div>
+    <h1>Panthers</h1>
+    <div class="edition">Tuesday, September 15, 2026 · Franchise Owner: Panthers</div>
+  </header>
+  <div class="hero">
+    <h2>Ranked #1 of 8 in roster quality</h2>
+    <p>Combined roster quality score: 268.44. Rivalry opponent this season: Falcons.</p>
+  </div>
+  <section class="block">
+    <div class="section-title">⭐ Top Draft Pieces</div>
+    <div class="card"><h3>Christian McCaffrey (RB, 37.25 ppg)</h3></div><div class="card"><h3>Brock Purdy (QB, 35.02 ppg)</h3></div><div class="card"><h3>Jonathan Taylor (RB, 31.86 ppg)</h3></div>
+  </section>
+  <section class="block">
+    <div class="section-title">🎯 Needs Address</div>
+    <div class="card"><h3>Scoring gap: IDP FLEX</h3><p>A full IDP lineup is rostered and started here — but this platform currently excludes IDP production from scoring, so those points don't count toward team totals yet. Not an empty slot, just an unscored one for now.</p></div>
+  </section>
+
+<div style="text-align:center;padding:14px 20px 26px;">
+  <img src="../../../logos/superleagues-logo.png" alt="SuperLeagues" style="height:40px;opacity:0.9;">
+  <div style="font-size:11px;letter-spacing:0.08em;color:rgba(255,255,255,0.45);margin-top:6px;">BROUGHT TO YOU BY SUPERLEAGUES</div>
+</div>
+</div>
+
+<script>
+const HOME = {"primary": "#0085CA", "secondary": "#BFC0BF"};
+const AWAY = {"primary": "#BFC0BF", "secondary": "#0085CA"};
+let isAway = false;
+function toggleColors() {
+  isAway = !isAway;
+  const c = isAway ? AWAY : HOME;
+  const r = document.documentElement.style;
+  r.setProperty("--primary", c.primary);
+  r.setProperty("--secondary", c.secondary);
+  document.getElementById("toggleLabel").textContent = isAway ? "View: Home" : "View: Away";
+}
+</script>
+
+</body>
+</html>
