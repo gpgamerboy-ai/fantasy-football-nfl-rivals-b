@@ -36,6 +36,14 @@ section.block{padding:8px 20px 22px;}
 .rank-row img{height:26px;}
 .rank-row .info{flex:1;font-size:13.5px;}
 .rank-row .pts{font-size:12px;color:rgba(242,240,250,0.55);}
+
+body.away-light{--text:#111111;--bg:#FFFFFF;--bg-dark:#F5F5F5;--line:rgba(0,0,0,0.12);}
+body.away-light .hero p,body.away-light .card p{color:#333;}
+body.away-light .edition{color:#666;}
+body.away-light .section-sub{color:#888;}
+body.away-light .card{background:rgba(0,0,0,0.04);}
+body.away-light .rank-row{border-color:rgba(0,0,0,0.15);}
+
 </style>
 </head>
 <body><div style="text-align: center; margin: 10px;"><a href="../../index.html" style="display:inline-block; padding:10px; background:#000; color:#fff; text-decoration:none; border-radius:5px;">&larr; Back to League Home</a></div>
@@ -77,7 +85,7 @@ section.block{padding:8px 20px 22px;}
 
 <script>
 const HOME = {"primary": "#241773", "secondary": "#FFFFFF"};
-const AWAY = {"primary": "#9E7C0C", "secondary": "#241773"};
+const AWAY = {"primary": "#241773", "secondary": "#241773"};
 let isAway = false;
 function toggleColors() {
   isAway = !isAway;
@@ -85,6 +93,7 @@ function toggleColors() {
   const r = document.documentElement.style;
   r.setProperty("--primary", c.primary);
   r.setProperty("--secondary", c.secondary);
+  document.body.classList.toggle("away-light", isAway);
   document.getElementById("toggleLabel").textContent = isAway ? "View: Home" : "View: Away";
 }
 </script>
