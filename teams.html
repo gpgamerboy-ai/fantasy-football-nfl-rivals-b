@@ -1,24 +1,62 @@
 <!DOCTYPE html>
-<html>
-<head><title>NFL Rivals B - Standings</title>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NFL Rivals B - Standings</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-body { font-family: Arial; padding: 40px; background: #0a2342; color: #fff; }
-h1 { color: #FB4F14; text-align: center; }
-table { width: 100%; max-width: 800px; margin: 20px auto; border-collapse: collapse; }
-th { background: #FB4F14; padding: 12px; text-align: left; }
-td { padding: 12px; border-bottom: 1px solid #333; }
-tr:hover { background: #1a3a5c; }
-a { color: #fff; text-decoration: none; }
-a:hover { color: #FB4F14; }
-.back { display: inline-block; padding: 10px 20px; background: #FB4F14; color: #fff; text-decoration: none; border-radius: 5px; margin-bottom: 20px; }
+:root{--bg:#F5F6F8;--card:#FFFFFF;--border:#E5E7EB;--navy:#0B2265;--red:#C8102E;--text:#1A1A1A;--mid:#4B5563;--shadow:0 1px 3px rgba(0,0,0,0.06),0 4px 12px rgba(0,0,0,0.04);}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',Arial,sans-serif;padding:30px 20px 60px;-webkit-font-smoothing:antialiased;}
+.page{max-width:900px;margin:0 auto;}
+.back{display:inline-block;padding:10px 18px;background:var(--navy);color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:14px;margin-bottom:26px;}
+.back:hover{background:var(--red);}
+header{text-align:center;margin-bottom:30px;}
+header h1{font-family:'Oswald',Arial,sans-serif;font-size:clamp(28px,4vw,40px);color:var(--navy);margin:0 0 10px;letter-spacing:0.02em;}
+header .accent{width:80px;height:4px;background:var(--red);margin:0 auto 12px;}
+header p{color:var(--mid);font-size:15px;margin:0;font-style:italic;}
+.card{background:var(--card);border-radius:10px;border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden;}
+table{width:100%;border-collapse:collapse;}
+thead{background:var(--navy);color:#fff;}
+th{font-family:'Oswald',Arial,sans-serif;font-size:13px;text-transform:uppercase;letter-spacing:0.1em;padding:14px 16px;text-align:left;font-weight:600;}
+th.num{text-align:right;width:110px;}
+th.rank{width:70px;}
+tbody tr{border-bottom:1px solid var(--border);}
+tbody tr:last-child{border-bottom:none;}
+tbody tr:hover{background:#FAFAFB;}
+td{padding:14px 16px;font-size:15px;}
+td.team a{color:var(--navy);text-decoration:none;font-family:'Oswald',Arial,sans-serif;font-weight:600;font-size:17px;letter-spacing:0.02em;}
+td.team a:hover{color:var(--red);}
+td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;color:var(--text);}
+.badge{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;font-family:'Oswald',Arial,sans-serif;font-weight:700;font-size:15px;}
+tbody tr:nth-child(1) .badge{background:var(--navy);}
 </style>
 </head>
 <body>
+<div class="page">
 <a href="index.html" class="back">&larr; Back to League Home</a>
-<h1>NFL Rivals B - Standings</h1>
+<header>
+<h1>&#127942; NFL Rivals B &mdash; Standings</h1>
+<div class="accent"></div>
+<p>Updated automatically from Sleeper.</p>
+</header>
+<div class="card">
 <table>
-<tr><th>Rank</th><th>Team</th><th>W-L</th><th>PF</th><th>PA</th></tr>
-<tr><td>1</td><td><a href="teams/raiders/index.html">Raiders</a></td><td>0-0-0</td><td>0.00</td><td>0.00</td></tr><tr><td>2</td><td><a href="teams/ravens/index.html">Ravens</a></td><td>0-0-0</td><td>0.00</td><td>0.00</td></tr><tr><td>3</td><td><a href="teams/chargers/index.html">Chargers</a></td><td>0-0-0</td><td>0.00</td><td>0.00</td></tr><tr><td>4</td><td><a href="teams/panthers/index.html">Panthers</a></td><td>0-0-0</td><td>0.00</td><td>0.00</td></tr><tr><td>5</td><td><a href="teams/broncos/index.html">Broncos</a></td><td>0-0-0</td><td>0.00</td><td>0.00</td></tr><tr><td>6</td><td><a href="teams/falcons/index.html">Falcons</a></td><td>0-0-0</td><td>0.00</td><td>0.00</td></tr><tr><td>7</td><td><a href="teams/browns/index.html">Browns</a></td><td>0-0-0</td><td>0.00</td><td>0.00</td></tr><tr><td>8</td><td><a href="teams/chiefs/index.html">Chiefs</a></td><td>0-0-0</td><td>0.00</td><td>0.00</td></tr>
+<thead>
+<tr><th class="rank">Rank</th><th>Team</th><th class="num">W-L-T</th><th class="num">PF</th><th class="num">PA</th></tr>
+</thead>
+<tbody>
+<tr><td class="rank"><span class="badge">1</span></td><td class="team"><a href="teams/raiders/index.html">Raiders</a></td><td class="num">0-0-0</td><td class="num">0.00</td><td class="num">0.00</td></tr>
+<tr><td class="rank"><span class="badge">2</span></td><td class="team"><a href="teams/ravens/index.html">Ravens</a></td><td class="num">0-0-0</td><td class="num">0.00</td><td class="num">0.00</td></tr>
+<tr><td class="rank"><span class="badge">3</span></td><td class="team"><a href="teams/chargers/index.html">Chargers</a></td><td class="num">0-0-0</td><td class="num">0.00</td><td class="num">0.00</td></tr>
+<tr><td class="rank"><span class="badge">4</span></td><td class="team"><a href="teams/panthers/index.html">Panthers</a></td><td class="num">0-0-0</td><td class="num">0.00</td><td class="num">0.00</td></tr>
+<tr><td class="rank"><span class="badge">5</span></td><td class="team"><a href="teams/broncos/index.html">Broncos</a></td><td class="num">0-0-0</td><td class="num">0.00</td><td class="num">0.00</td></tr>
+<tr><td class="rank"><span class="badge">6</span></td><td class="team"><a href="teams/falcons/index.html">Falcons</a></td><td class="num">0-0-0</td><td class="num">0.00</td><td class="num">0.00</td></tr>
+<tr><td class="rank"><span class="badge">7</span></td><td class="team"><a href="teams/browns/index.html">Browns</a></td><td class="num">0-0-0</td><td class="num">0.00</td><td class="num">0.00</td></tr>
+<tr><td class="rank"><span class="badge">8</span></td><td class="team"><a href="teams/chiefs/index.html">Chiefs</a></td><td class="num">0-0-0</td><td class="num">0.00</td><td class="num">0.00</td></tr>
+</tbody>
 </table>
+</div>
+</div>
 </body>
 </html>
