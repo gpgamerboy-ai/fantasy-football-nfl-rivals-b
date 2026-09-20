@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Playoffs Mockup — Rivals A</title>
+<title>NFL Rivals B — Playoffs</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#F5F6F8;--card:#FFF;--border:#E5E7EB;--navy:#0B2265;--red:#C8102E;--text:#1A1A1A;--mid:#4B5563;--light:#9CA3AF;--shadow:0 1px 3px rgba(0,0,0,0.06),0 4px 12px rgba(0,0,0,0.04);}
@@ -21,32 +21,14 @@ header p{color:var(--mid);font-size:16px;margin:0;font-style:italic;}
 .week-tag{text-align:center;color:var(--light);font-size:12px;margin-bottom:6px;letter-spacing:0.06em;font-weight:500;}
 .matchup{background:var(--card);border-radius:10px;border:1px solid var(--border);box-shadow:var(--shadow);padding:14px;display:flex;flex-direction:column;gap:10px;}
 .team{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;background:#FAFAFB;border:1px solid transparent;}
-.team img{height:56px;width:56px;object-fit:contain;}
-.team .seed-badge{width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Oswald',Arial,sans-serif;font-weight:700;font-size:16px;flex-shrink:0;}
+.team img{height:56px;width:56px;object-fit:contain;opacity:0.25;}
+.team .seed-badge{width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Oswald',Arial,sans-serif;font-weight:700;font-size:16px;flex-shrink:0;opacity:0.4;}
 .team .info{flex:1;min-width:0;}
-.team .name{font-family:'Oswald',Arial,sans-serif;font-size:16px;font-weight:600;color:var(--navy);letter-spacing:0.02em;}
-.team .record{font-size:11.5px;color:var(--light);margin-top:2px;}
-.team .score{font-family:'Oswald',Arial,sans-serif;font-size:24px;font-weight:700;color:var(--navy);}
-.team.winner{background:linear-gradient(90deg,rgba(11,34,101,0.06),rgba(11,34,101,0.02));border-color:rgba(11,34,101,0.2);border-left:4px solid var(--red);}
-.team.winner .score{color:var(--red);}
-.team.loser{opacity:0.55;}
-.stats{border-top:1px dashed var(--border);padding-top:12px;}
-.stat-head{display:grid;grid-template-columns:1fr 92px 92px;gap:8px;align-items:end;padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:8px;}
-.stat-head .lbl{font-size:10.5px;color:var(--light);text-transform:uppercase;letter-spacing:0.1em;font-weight:600;}
-.stat-head .team-cell{display:flex;flex-direction:column;align-items:center;gap:4px;}
-.stat-head .team-cell img{height:28px;width:28px;object-fit:contain;}
-.stat-head .team-cell span{font-family:'Oswald',Arial,sans-serif;font-size:11.5px;font-weight:600;color:var(--navy);letter-spacing:0.04em;}
-.stat-grid{display:grid;grid-template-columns:1fr 92px 92px;gap:7px 8px;font-size:12.5px;align-items:center;}
-.stat-grid .lbl{color:var(--mid);font-weight:500;}
-.stat-grid .v{color:var(--text);font-weight:700;text-align:center;font-variant-numeric:tabular-nums;}
-.stat-grid .v.win{color:var(--red);}
-.prob-wrap{grid-column:2 / span 2;display:flex;height:8px;border-radius:4px;overflow:hidden;border:1px solid var(--border);margin-top:2px;}
-.prob-wrap .p1{background:var(--navy);}
-.prob-wrap .p2{background:var(--red);}
+.team .name{font-family:'Oswald',Arial,sans-serif;font-size:16px;font-weight:600;color:var(--light);letter-spacing:0.02em;}
 .awaiting{text-align:center;color:var(--light);font-size:13px;font-style:italic;padding:18px 10px;}
-.champion-card{background:var(--card);border-radius:12px;border:2px solid var(--red);padding:24px;text-align:center;box-shadow:var(--shadow);}
-.champion-card .trophy{font-size:52px;margin-bottom:8px;}
-.champion-card .label{font-family:'Oswald',Arial,sans-serif;color:var(--navy);font-size:14px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;}
+.champion-card{background:var(--card);border-radius:12px;border:2px dashed var(--border);padding:24px;text-align:center;box-shadow:var(--shadow);}
+.champion-card .trophy{font-size:52px;margin-bottom:8px;opacity:0.35;}
+.champion-card .label{font-family:'Oswald',Arial,sans-serif;color:var(--navy);font-size:14px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;opacity:0.7;}
 .champion-card .placeholder{color:var(--light);font-size:13px;font-style:italic;}
 </style>
 </head>
@@ -62,79 +44,44 @@ header p{color:var(--mid);font-size:16px;margin:0;font-style:italic;}
 
 <div class="round">
   <h2>Round 1</h2>
-  <div class="week-tag">NFL Week 15 &middot; Final</div>
-
+  <div class="week-tag">NFL Week 15</div>
   <div class="matchup">
-    <div class="team winner"><span class="seed-badge">1</span><img src="logos/baltimore-ravens-logo.png" alt=""><div class="info"><div class="name">Ravens</div><div class="record">12-2-0 &middot; 138.9 avg</div></div><div class="score">142.3</div></div>
-    <div class="team loser"><span class="seed-badge">8</span><img src="logos/oakland-raiders-logo.png" alt=""><div class="info"><div class="name">Raiders</div><div class="record">6-8-0 &middot; 118.4 avg</div></div><div class="score">114.7</div></div>
+    <div class="team"><span class="seed-badge">1</span><img src="logos/NFL-Shield.jpg" alt=""><div class="info"><div class="name">TBD</div></div></div>
+    <div class="team"><span class="seed-badge">8</span><img src="logos/NFL-Shield.jpg" alt=""><div class="info"><div class="name">TBD</div></div></div>
   </div>
-
   <div class="matchup">
-    <div class="team loser"><span class="seed-badge">4</span><img src="logos/denver-broncos-logo.png" alt=""><div class="info"><div class="name">Broncos</div><div class="record">8-6-0 &middot; 125.1 avg</div></div><div class="score">125.4</div></div>
-    <div class="team winner"><span class="seed-badge">5</span><img src="logos/atlanta-falcons-logo.png" alt=""><div class="info"><div class="name">Falcons</div><div class="record">8-6-0 &middot; 122.9 avg</div></div><div class="score">128.9</div></div>
+    <div class="team"><span class="seed-badge">4</span><img src="logos/NFL-Shield.jpg" alt=""><div class="info"><div class="name">TBD</div></div></div>
+    <div class="team"><span class="seed-badge">5</span><img src="logos/NFL-Shield.jpg" alt=""><div class="info"><div class="name">TBD</div></div></div>
   </div>
-
   <div class="matchup">
-    <div class="team winner"><span class="seed-badge">2</span><img src="logos/los-angeles-chargers-logo.png" alt=""><div class="info"><div class="name">Chargers</div><div class="record">11-3-0 &middot; 134.2 avg</div></div><div class="score">138.1</div></div>
-    <div class="team loser"><span class="seed-badge">7</span><img src="logos/cleveland-browns-logo.png" alt=""><div class="info"><div class="name">Browns</div><div class="record">7-7-0 &middot; 120.3 avg</div></div><div class="score">118.3</div></div>
+    <div class="team"><span class="seed-badge">2</span><img src="logos/NFL-Shield.jpg" alt=""><div class="info"><div class="name">TBD</div></div></div>
+    <div class="team"><span class="seed-badge">7</span><img src="logos/NFL-Shield.jpg" alt=""><div class="info"><div class="name">TBD</div></div></div>
   </div>
-
   <div class="matchup">
-    <div class="team winner"><span class="seed-badge">3</span><img src="logos/kansas-city-chiefs-logo.png" alt=""><div class="info"><div class="name">Chiefs</div><div class="record">10-4-0 &middot; 136.8 avg</div></div><div class="score">141.7</div></div>
-    <div class="team loser"><span class="seed-badge">6</span><img src="logos/carolina-panthers-logo.png" alt=""><div class="info"><div class="name">Panthers</div><div class="record">7-7-0 &middot; 124.6 avg</div></div><div class="score">127.5</div></div>
+    <div class="team"><span class="seed-badge">3</span><img src="logos/NFL-Shield.jpg" alt=""><div class="info"><div class="name">TBD</div></div></div>
+    <div class="team"><span class="seed-badge">6</span><img src="logos/NFL-Shield.jpg" alt=""><div class="info"><div class="name">TBD</div></div></div>
   </div>
 </div>
 
 <div class="round">
   <h2>Round 2</h2>
-  <div class="week-tag">NFL Week 16 &middot; Projected</div>
-
+  <div class="week-tag">NFL Week 16</div>
   <div class="matchup">
-    <div class="team"><span class="seed-badge">1</span><img src="logos/baltimore-ravens-logo.png" alt=""><div class="info"><div class="name">Ravens</div><div class="record">12-2-0 &middot; 138.9 avg</div></div></div>
-    <div class="team"><span class="seed-badge">5</span><img src="logos/atlanta-falcons-logo.png" alt=""><div class="info"><div class="name">Falcons</div><div class="record">8-6-0 &middot; 122.9 avg</div></div></div>
-    <div class="stats">
-      <div class="stat-head">
-        <span class="lbl">Matchup Stats</span>
-        <div class="team-cell"><img src="logos/baltimore-ravens-logo.png"><span>BAL</span></div>
-        <div class="team-cell"><img src="logos/atlanta-falcons-logo.png"><span>ATL</span></div>
-      </div>
-      <div class="stat-grid">
-        <span class="lbl">&#127919; Predicted</span><span class="v">136.8</span><span class="v">120.4</span>
-        <span class="lbl">&#128200; Win Prob</span><span class="v win">73%</span><span class="v">27%</span>
-        <div class="prob-wrap"><div class="p1" style="width:73%"></div><div class="p2" style="width:27%"></div></div>
-        <span class="lbl">&#9876;&#65039; Season H2H</span><span class="v">1-0</span><span class="v">0-1</span>
-        <span class="lbl">&#128293; Last 3 Weeks</span><span class="v">3-0</span><span class="v">3-0</span>
-      </div>
-    </div>
+    <div class="team"><span class="seed-badge">--</span><img src="logos/NFL-Shield.jpg" alt=""><div class="info"><div class="name">TBD</div></div></div>
+    <div class="team"><span class="seed-badge">--</span><img src="logos/NFL-Shield.jpg" alt=""><div class="info"><div class="name">TBD</div></div></div>
   </div>
-
   <div class="matchup">
-    <div class="team"><span class="seed-badge">2</span><img src="logos/los-angeles-chargers-logo.png" alt=""><div class="info"><div class="name">Chargers</div><div class="record">11-3-0 &middot; 134.2 avg</div></div></div>
-    <div class="team"><span class="seed-badge">3</span><img src="logos/kansas-city-chiefs-logo.png" alt=""><div class="info"><div class="name">Chiefs</div><div class="record">10-4-0 &middot; 136.8 avg</div></div></div>
-    <div class="stats">
-      <div class="stat-head">
-        <span class="lbl">Matchup Stats</span>
-        <div class="team-cell"><img src="logos/los-angeles-chargers-logo.png"><span>LAC</span></div>
-        <div class="team-cell"><img src="logos/kansas-city-chiefs-logo.png"><span>KC</span></div>
-      </div>
-      <div class="stat-grid">
-        <span class="lbl">&#127919; Predicted</span><span class="v">129.5</span><span class="v">132.8</span>
-        <span class="lbl">&#128200; Win Prob</span><span class="v">44%</span><span class="v win">56%</span>
-        <div class="prob-wrap"><div class="p1" style="width:44%"></div><div class="p2" style="width:56%"></div></div>
-        <span class="lbl">&#9876;&#65039; Season H2H</span><span class="v">1-1</span><span class="v">1-1</span>
-        <span class="lbl">&#128293; Last 3 Weeks</span><span class="v">2-1</span><span class="v">3-0</span>
-      </div>
-    </div>
+    <div class="team"><span class="seed-badge">--</span><img src="logos/NFL-Shield.jpg" alt=""><div class="info"><div class="name">TBD</div></div></div>
+    <div class="team"><span class="seed-badge">--</span><img src="logos/NFL-Shield.jpg" alt=""><div class="info"><div class="name">TBD</div></div></div>
   </div>
 </div>
 
 <div class="round">
   <h2>Championship</h2>
-  <div class="week-tag">NFL Weeks 17 &amp; 18 &middot; TBD</div>
+  <div class="week-tag">NFL Weeks 17 &amp; 18</div>
   <div class="matchup">
-    <div class="team"><span class="seed-badge">1</span><img src="logos/baltimore-ravens-logo.png" alt=""><div class="info"><div class="name">Ravens</div><div class="record">Awaiting Round 2</div></div></div>
-    <div class="team"><span class="seed-badge">--</span><img src="logos/nfl-shield.jpg" alt="" style="opacity:0.3"><div class="info"><div class="name">TBD</div><div class="record">Awaiting Round 2</div></div></div>
-    <div class="awaiting">&#128274; Bracket locked until Round 2 final</div>
+    <div class="team"><span class="seed-badge">--</span><img src="logos/NFL-Shield.jpg" alt=""><div class="info"><div class="name">TBD</div></div></div>
+    <div class="team"><span class="seed-badge">--</span><img src="logos/NFL-Shield.jpg" alt=""><div class="info"><div class="name">TBD</div></div></div>
   </div>
 </div>
 
